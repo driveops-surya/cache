@@ -1,0 +1,26 @@
+name: Cache Cleanup Demo
+
+on:
+  schedule:
+    # Run weekly to clean up old caches
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+
+jobs:
+  cache-cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cleanup old caches
+      run: |
+        echo "This workflow demonstrates cache cleanup strategies"
+        echo "GitHub automatically removes caches after 7 days of no access"
+        echo "You can also use GitHub CLI or API to manage caches programmatically"
+        
+    # Example of conditional cache cleanup
+    - name: Conditional cache management
+      run: |
+        echo "Cache management strategies:"
+        echo "1. Use specific cache keys for different branches"
+        echo "2. Include commit SHA in keys for exact builds"
+        echo "3. Use restore-keys for fallback caching"
+        echo "4. Regular cleanup of unused caches"
