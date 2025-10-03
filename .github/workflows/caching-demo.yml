@@ -17,7 +17,7 @@ jobs:
       
       # UPLOAD: Save build results
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: my-app-build
           path: dist/
@@ -28,7 +28,7 @@ jobs:
     steps:
       # DOWNLOAD: Get the built files
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: my-app-build
           
